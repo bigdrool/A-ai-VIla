@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí da Vila - O melhor açaí da região!</title>
+    <meta name="description" content="Experimente o melhor açaí da cidade, feito com ingredientes naturais e muito sabor!">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/96/000000/acai-bowl.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'heading': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            light: '#7B2CBF',
+                            dark: '#C77DFF',
+                        },
+                        secondary: '#FF7B9C',
+                        accent: {
+                            light: '#9EF01A',
+                            dark: '#C0FF72',
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-500 ease-in-out">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-light dark:text-primary-dark font-heading">Açaí da Vila</a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors">Sobre Nós</a>
+                <a href="#cardapio" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors">Cardápio</a>
+                <a href="#diferenciais" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors">Diferenciais</a>
+                <a href="#depoimentos" class="hover:text-primary-light dark:hover:text-primary-dark transition-colors">Depoimentos</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-sun dark:hidden"></i>
+                    <i class="fas fa-moon hidden dark:inline"></i>
+                </button>
+                <a href="#contato" class="bg-primary-light dark:bg-primary-dark text-white px-4 py-2 rounded-full font-medium hover:opacity-90 transition-opacity">
+                    Peça Agora
+                </a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2 pb-4">
+                <a href="#inicio" class="py-2 hover:text-primary-light dark:hover:text-primary-dark transition-colors">Início</a>
+                <a href="#sobre" class="py-2 hover:text-primary-light dark:hover:text-primary-dark transition-colors">Sobre Nós</a>
+                <a href="#cardapio" class="py-2 hover:text-primary-light dark:hover:text-primary-dark transition-colors">Cardápio</a>
+                <a href="#diferenciais" class="py-2 hover:text-primary-light dark:hover:text-primary-dark transition-colors">Diferenciais</a>
+                <a href="#depoimentos" class="py-2 hover:text-primary-light dark:hover:text-primary-dark transition-colors">Depoimentos</a>
+                <a href="#contato" class="mt-4 bg-primary-light dark:bg-primary-dark text-white text-center py-2 rounded-full font-medium hover:opacity-90 transition-opacity">
+                    Peça Agora
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-20 md:py-0">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold font-heading mb-6 leading-tight">
+                        O sabor que <span class="text-primary-light dark:text-primary-dark">energiza</span> o seu dia <span class="text-pink-500">🍓</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                        Açaí puro, ingredientes frescos e muito sabor em cada colherada. 
+                        Experimente a combinação perfeita de energia e sabor!
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de fazer um pedido" 
+                           target="_blank" 
+                           class="bg-primary-light dark:bg-primary-dark text-white px-8 py-4 rounded-full font-medium text-center hover:opacity-90 transition-opacity">
+                            Peça pelo WhatsApp
+                        </a>
+                        <a href="#cardapio" 
+                           class="border-2 border-primary-light dark:border-primary-dark text-primary-light dark:text-primary-dark px-8 py-4 rounded-full font-medium text-center hover:bg-primary-light/10 dark:hover:bg-primary-dark/10 transition-colors">
+                            Ver Cardápio
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="images/fruta.jfif" 
+                         alt="Açaí delicioso com frutas" 
+                         class="rounded-3xl shadow-2xl max-w-md w-full h-auto object-cover animate-float"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary-light dark:text-primary-dark font-semibold">Conheça nossa história</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mt-2">Sobre Nós</h2>
+                <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="images/Açaí Vila.png" 
+                         alt="Equipe Açaí da Vila" 
+                         class="rounded-2xl shadow-xl w-full h-auto max-w-lg mx-auto object-cover"
+                         loading="lazy"
+                         style="max-height: 500px;">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold font-heading mb-4">Nossa História</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        O Açaí da Vila nasceu da paixão por trazer o verdadeiro sabor da Amazônia para a sua mesa. 
+                        Desde 2015, nos dedicamos a oferecer a melhor experiência em açaí, com ingredientes 
+                        selecionados e receitas exclusivas.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Nossa missão é proporcionar momentos especiais através de sabores autênticos, 
+                        sempre com qualidade, inovação e muito carinho em cada preparo.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="bg-white/50 dark:bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-primary-light/10 dark:bg-primary-dark/20 rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-leaf text-primary-light dark:text-primary-dark text-xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Ingredientes Naturais</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Apenas o melhor da natureza em cada tigela</p>
+                        </div>
+                        <div class="bg-white/50 dark:bg-gray-800/50 p-4 rounded-xl backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-primary-light/10 dark:bg-primary-dark/20 rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-heart text-primary-light dark:text-primary-dark text-xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Feito com Amor</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Cada detalhe preparado com carinho</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio -->
+    <section id="cardapio" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary-light dark:text-primary-dark font-semibold">Nossos Sabores</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mt-2">Cardápio</h2>
+                <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/5a668ea55c304_45La fruta açai-6808.jpg" 
+                             alt="Açaí Tradicional" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold font-heading">Tradicional</h3>
+                            <span class="bg-primary-light/10 dark:bg-primary-dark/20 text-primary-light dark:text-primary-dark text-sm font-semibold px-3 py-1 rounded-full">R$ 15,90</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Açaí puro batido na hora, acompanhado de banana e granola.</p>
+                        <div class="hidden group-hover:block transition-all duration-300">
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ingredientes:</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Açaí 100% puro</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Banana</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Granola</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Mel ou xarope de guaraná</li>
+                            </ul>
+                        </div>
+                        <button class="mt-4 w-full bg-primary-light dark:bg-primary-dark text-white py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                            Pedir Agora
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/frutas tropical.jfif" 
+                             alt="Açaí com Frutas Tropicais" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold font-heading">Frutas Tropicais</h3>
+                            <span class="bg-primary-light/10 dark:bg-primary-dark/20 text-primary-light dark:text-primary-dark text-sm font-semibold px-3 py-1 rounded-full">R$ 18,90</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Açaí com mix de frutas tropicais e granola crocante.</p>
+                        <div class="hidden group-hover:block transition-all duration-300">
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ingredientes:</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Açaí 100% puro</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Morango</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Kiwi</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Manga</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Granola e mel</li>
+                            </ul>
+                        </div>
+                        <button class="mt-4 w-full bg-primary-light dark:bg-primary-dark text-white py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                            Pedir Agora
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/açai fit.jfif" 
+                             alt="Açaí Fit" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold font-heading">Açaí Fit</h3>
+                            <span class="bg-primary-light/10 dark:bg-primary-dark/20 text-primary-light dark:text-primary-dark text-sm font-semibold px-3 py-1 rounded-full">R$ 22,90</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Opção saudável com whey protein, pasta de amendoim e frutas vermelhas.</p>
+                        <div class="hidden group-hover:block transition-all duration-300">
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ingredientes:</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Açaí sem açúcar</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Whey protein baunilha</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Pasta de amendoim 100%</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Mix de frutas vermelhas</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Granola sem açúcar</li>
+                            </ul>
+                        </div>
+                        <button class="mt-4 w-full bg-primary-light dark:bg-primary-dark text-white py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                            Pedir Agora
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-primary-light dark:text-primary-dark font-medium hover:underline">
+                    Ver cardápio completo
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary-light dark:text-primary-dark font-semibold">Nossos Diferenciais</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mt-2">Monte o Seu Açaí</h2>
+                <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Drag & Drop Ingredients -->
+                <div class="bg-white dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold font-heading mb-6">Monte do seu jeito</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Arraste os ingredientes para a tigela e crie a combinação perfeita de sabores!
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6" id="ingredients-container">
+                        <!-- Ingredients will be added by JavaScript -->
+                    </div>
+                    
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-6 min-h-64 flex items-center justify-center relative overflow-hidden" id="bowl">
+                        <div class="text-center text-gray-400 dark:text-gray-500" id="bowl-placeholder">
+                            <i class="fas fa-utensil-spoon text-4xl mb-2"></i>
+                            <p>Arraste os ingredientes para cá</p>
+                        </div>
+                        <div id="bowl-content" class="absolute inset-0 p-4 flex flex-wrap content-start overflow-auto">
+                            <!-- Dropped ingredients will appear here -->
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex justify-between items-center">
+                        <button id="reset-bowl" class="text-red-500 hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                            <i class="fas fa-trash-alt mr-1"></i> Limpar
+                        </button>
+                        <button id="add-to-cart" class="bg-primary-light dark:bg-primary-dark text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Cup Filling Animation -->
+                <div class="relative">
+                    <div class="relative z-10 max-w-md mx-auto">
+                        <div class="relative">
+                            <!-- Cup -->
+                            <div class="w-64 h-80 mx-auto relative">
+                                <!-- Cup outline -->
+                                <div class="absolute inset-0 border-8 border-gray-200 dark:border-gray-600 rounded-b-3xl rounded-t-lg"></div>
+                                
+                                <!-- Liquid fill -->
+                                <div id="cup-fill" class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-900 to-purple-600 rounded-b-2xl transition-all duration-1000 ease-out" style="height: 0%;"></div>
+                                
+                                <!-- Cup details -->
+                                <div class="absolute inset-0 flex flex-col items-center justify-center p-4">
+                                    <div class="text-center text-white font-bold text-lg z-10 opacity-0 transition-opacity duration-500" id="cup-text">
+                                        <i class="fas fa-check-circle text-3xl mb-2"></i>
+                                        <p>Seu açaí está pronto!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Straw -->
+                            <div class="absolute -right-8 top-16 w-16 h-4 bg-gray-300 transform rotate-45 origin-left"></div>
+                        </div>
+                        
+                        <div class="mt-12 text-center">
+                            <h3 class="text-2xl font-bold font-heading mb-4">Acompanhe seu pedido</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                Role para baixo e acompanhe o preparo do seu açaí em tempo real!
+                            </p>
+                            <div class="w-1/2 h-2 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto overflow-hidden">
+                                <div id="progress-bar" class="h-full bg-primary-light dark:bg-primary-dark rounded-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-10 -left-10 w-20 h-20 bg-accent-light/20 dark:bg-accent-dark/20 rounded-full"></div>
+                    <div class="absolute -bottom-5 -right-5 w-32 h-32 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full"></div>
+                </div>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+                <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-primary-light/10 dark:bg-primary-dark/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-2xl text-primary-light dark:text-primary-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading mb-2">100% Natural</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Ingredientes frescos e selecionados, sem conservantes ou corantes artificiais.</p>
+                </div>
+                
+                <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-primary-light/10 dark:bg-primary-dark/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-2xl text-accent-light dark:text-accent-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading mb-2">Energia Natural</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Fonte de energia, vitaminas e antioxidantes para o seu dia a dia.</p>
+                </div>
+                
+                <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-primary-light/10 dark:bg-primary-dark/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading mb-2">Feito com Amor</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Cada tigela é preparada com carinho para proporcionar a melhor experiência.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary-light dark:text-primary-dark font-semibold">O que dizem</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mt-2">Depoimentos</h2>
+                <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Testimonial Slider -->
+                    <div class="overflow-hidden">
+                        <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Testimonials will be added by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button id="prev-testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-8 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-chevron-left text-primary-light dark:text-primary-dark"></i>
+                    </button>
+                    <button id="next-testimonial" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-8 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-chevron-right text-primary-light dark:text-primary-dark"></i>
+                    </button>
+                    
+                    <!-- Dots Navigation -->
+                    <div id="testimonial-dots" class="flex justify-center mt-8 space-x-2">
+                        <!-- Dots will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contato" class="py-20 bg-gradient-to-r from-purple-600 to-pink-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading mb-6">Peça seu açaí agora e sinta o frescor da Amazônia!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Entregamos em toda a região. É só escolher o seu preferido e aguardar!</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de fazer um pedido" 
+                   target="_blank" 
+                   class="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center justify-center">
+                    <i class="fab fa-whatsapp text-2xl mr-2"></i> Pedir pelo WhatsApp
+                </a>
+                <a href="tel:+5511999999999" 
+                   class="bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Ligar Agora
+                </a>
+            </div>
+            
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-6 mt-12">
+                <a href="#" class="text-white hover:text-gray-200 transition-colors" aria-label="Instagram">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-200 transition-colors" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-200 transition-colors" aria-label="Twitter">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-200 transition-colors" aria-label="TikTok">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold text-white mb-4 font-heading">Açaí da Vila</h3>
+                    <p class="max-w-xs mb-4">O sabor que energiza o seu dia com ingredientes frescos e muito amor!</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Navegação</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
+                            <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                            <li><a href="#cardapio" class="hover:text-white transition-colors">Cardápio</a></li>
+                            <li><a href="#diferenciais" class="hover:text-white transition-colors">Diferenciais</a></li>
+                            <li><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Horário de Funcionamento</h4>
+                        <ul class="space-y-2">
+                            <li>Segunda a Sexta: 10h - 22h</li>
+                            <li>Sábado: 11h - 23h</li>
+                            <li>Domingo: 11h - 20h</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Contato</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-2 text-primary-light"></i>
+                                <span>Rua das Acácias, 123<br>Vila Mariana<br>São Paulo - SP</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt mr-2 text-primary-light"></i>
+                                <a href="tel:+5511999999999" class="hover:text-white transition-colors">(11) 99999-9999</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-primary-light"></i>
+                                <a href="mailto:contato@acaidavila.com.br" class="hover:text-white transition-colors">contato@acaidavila.com.br</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Açaí da Vila. Todos os direitos reservados.</p>
+                <div class="mt-2">
+                    <a href="#" class="hover:text-gray-300 transition-colors">Política de Privacidade</a>
+                    <span class="mx-2">•</span>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-light dark:bg-primary-dark text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
